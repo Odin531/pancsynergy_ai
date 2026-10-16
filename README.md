@@ -6,10 +6,11 @@ An end-to-end Machine Learning pipeline and production-ready RESTful API backend
 
 ## 🔬 Scientific Context & Dataset
 
-- **Target Variable**: `Gamma` (Synergy Parameter from in vitro combination viability assays).
-  - **$	ext{Gamma} < 1.0$**: Synergistic drug combination (enhanced cancer cell killing).
-  - **$	ext{Gamma} < 0.5$**: High / Strong synergy.
-  - **$	ext{Gamma} \ge 1.0$**: Additive or Antagonistic.
+- **Target Variable:** Gamma (Γ), the synergy parameter derived from in-vitro combination viability assays.
+  - **Γ < 0.5:** Strong synergy.
+  - **0.5 ≤ Γ < 1.0:** Moderate synergy.
+  - **1.0 ≤ Γ < 1.5:** Additive or weak interaction.
+  - **Γ ≥ 1.5:** Antagonistic interaction.
 - **Input Features**:
   - Molecular chemical structures (SMILES) converted to **Extended-Connectivity Fingerprints (Morgan/ECFP, 256 bits)** and **2D physicochemical properties** (Molecular Weight, LogP, TPSA, HBD, HBA, Rotatable Bonds, Rings, etc.).
   - Single-agent pharmacological potencies (`Log AC50 (M)`).
@@ -37,7 +38,8 @@ All models are evaluated via **5-Fold Cross-Validation** and a **20% Hold-Out Te
 - **MAE** (Mean Absolute Error)
 - **$R^2$** (Coefficient of Determination)
 - **Pearson correlation ($r$)**
-- **Spearman rank correlation ($ho$)**
+- **Spearman rank correlation ($
+ho$)**
 
 ---
 

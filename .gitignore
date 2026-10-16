@@ -11,3 +11,8 @@ frontend/dist/
 # Local settings
 .env
 .DS_Store
+
+# Environment files in all directories
+**/.env
+**/.env.*
+!**/.env.example

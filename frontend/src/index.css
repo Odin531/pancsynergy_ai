@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#F8FAFC] text-slate-900 font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-white border border-slate-200/90 rounded-xl shadow-card;
+  }
+
+  .panel-header {
+    @apply px-6 py-4 border-b border-slate-100;
+  }
+
+  .kpi-card {
+    @apply bg-white border border-slate-200/90 rounded-xl shadow-card p-5 flex flex-col gap-1.5 transition-all duration-150 hover:shadow-card-hover;
+  }
+
+  .badge-synergistic {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200;
+  }
+
+  .badge-moderate {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-teal-50 text-teal-800 border border-teal-200;
+  }
+
+  .badge-additive {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200;
+  }
+
+  .badge-antagonistic {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-50 text-rose-800 border border-rose-200;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-slate-300 rounded-lg px-3.5 py-2 text-sm text-slate-900 placeholder:text-slate-400
+           focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-600/10
+           transition-all duration-150;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 
+           text-white text-sm font-semibold rounded-lg shadow-sm transition-all duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-white hover:bg-slate-50
+           text-slate-700 text-sm font-medium rounded-lg border border-slate-300 shadow-sm
+           transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-1.5 text-slate-600 hover:text-slate-900
+           text-sm font-medium rounded-lg hover:bg-slate-100 transition-colors duration-150;
+  }
+
+  .metric-value {
+    @apply text-2xl font-bold tracking-tight text-slate-900 tabular-nums;
+  }
+
+  .metric-label {
+    @apply text-xs text-slate-500 font-semibold uppercase tracking-wider;
+  }
+
+  .explanation-box {
+    @apply p-3.5 rounded-lg bg-slate-50/80 border border-slate-200/80 text-xs text-slate-600 leading-relaxed;
+  }
+}
+
+/* Recharts custom styles for clean light theme */
+.recharts-tooltip-wrapper {
+  z-index: 50;
+}
+
+.recharts-default-tooltip {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  padding: 8px 12px !important;
+}
+
+.recharts-tooltip-label {
+  color: #334155 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  margin-bottom: 4px !important;
+}
+
+.recharts-tooltip-item {
+  color: #0F172A !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: #475569 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.recharts-legend-item-text {
+  color: #475569 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
